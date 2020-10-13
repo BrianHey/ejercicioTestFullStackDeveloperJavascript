@@ -22,14 +22,16 @@ const registros = [
   },
 ];
 
-var regOrdenados = registros.sort(function (a, b) { return a.date - b.date });
-const tbody = document.getElementById("tablaOrdenada");
+var regOrdenados = registros.sort((a, b) => a.date - b.date);
+
 for (i = 0; i < regOrdenados.length; i++) {
-  tbody.innerHTML += `
-    <tr>
-        <td>${regOrdenados[i].id}</td>
-        <td>${regOrdenados[i].nombre}</td>
-        <td>${regOrdenados[i].date}</td>
-    </tr>
-   `;
+  $("#tablaOrdenada").append(
+    `
+        <tr>
+            <td>${regOrdenados[i].id}</td>
+            <td>${regOrdenados[i].nombre}</td>
+            <td>${regOrdenados[i].date}</td>
+        </tr>
+   `
+  );
 }
