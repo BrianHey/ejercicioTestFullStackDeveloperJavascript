@@ -24,14 +24,14 @@ const registros = [
 
 var regOrdenados = registros.sort((a, b) => a.date - b.date);
 
-for (i = 0; i < regOrdenados.length; i++) {
+regOrdenados.forEach((r) => {
   $("#tablaOrdenada").append(
     `
-        <tr>
-            <td>${regOrdenados[i].id}</td>
-            <td>${regOrdenados[i].nombre}</td>
-            <td>${regOrdenados[i].date}</td>
-        </tr>
-   `
+          <tr>
+              <td>${r.id}</td>
+              <td>${r.nombre}</td>
+              <td>${r.date}</td>
+          </tr>
+     `
   );
-}
+});
